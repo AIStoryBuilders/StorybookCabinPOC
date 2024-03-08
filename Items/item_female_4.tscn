@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5lj772y6433c"]
+
+[ext_resource type="PackedScene" uid="uid://b37udavnj0ai1" path="res://Items/item_texture.tscn" id="1_xuo25"]
+[ext_resource type="Texture2D" uid="uid://ca57bly04ivcp" path="res://assets/PixelCharacters/Spritesheet/female4.png" id="2_0m2qe"]
+[ext_resource type="PackedScene" uid="uid://dkqf5krblkehp" path="res://Entity/female_4.tscn" id="3_nl07o"]
+
+[node name="item_female4" instance=ExtResource("1_xuo25")]
+texture = ExtResource("2_0m2qe")
+this_scene = ExtResource("3_nl07o")

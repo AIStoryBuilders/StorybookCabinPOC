@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://i7mym6ildqsy"
+path="res://.godot/imported/advancedCharacter.obj-e431c2255d3088a4bc1ba6a779630db2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/advancedCharacter.obj-e431c2255d3088a4bc1ba6a779630db2.mesh"]
+
+source_file="res://assets/Blocky Characters/Models/Non-rigged/advancedCharacter.obj"
+dest_files=["res://.godot/imported/advancedCharacter.obj-e431c2255d3088a4bc1ba6a779630db2.mesh", "res://.godot/imported/advancedCharacter.obj-e431c2255d3088a4bc1ba6a779630db2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

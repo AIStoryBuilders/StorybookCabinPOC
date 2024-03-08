@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4dik8qu8beqf"]
+
+[ext_resource type="PackedScene" uid="uid://b37udavnj0ai1" path="res://Items/item_texture.tscn" id="1_tcii3"]
+[ext_resource type="Texture2D" uid="uid://d2hu0em4rp3fo" path="res://assets/PixelCharacters/Spritesheet/knight1.png" id="2_xwfn7"]
+[ext_resource type="PackedScene" uid="uid://dehjbxw1pqmpp" path="res://Entity/knight_1.tscn" id="3_iq3fj"]
+
+[node name="item_knight1" instance=ExtResource("1_tcii3")]
+texture = ExtResource("2_xwfn7")
+this_scene = ExtResource("3_iq3fj")

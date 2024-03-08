@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b37udavnj0ai1"]
+
+[ext_resource type="Script" path="res://Scripts/item_texture.gd" id="1_orv6m"]
+
+[node name="item_texture" type="TextureRect"]
+custom_minimum_size = Vector2(68, 68)
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 3
+script = ExtResource("1_orv6m")
+
+[connection signal="gui_input" from="." to="." method="_item_clicked"]

@@ -1,0 +1,139 @@
+[gd_scene load_steps=16 format=3 uid="uid://c7vrdmerdl6r5"]
+
+[ext_resource type="Texture2D" uid="uid://co6g7h8cc1h7x" path="res://assets/PixelCharacters/Spritesheet/female1.png" id="1_m5om8"]
+[ext_resource type="Texture2D" uid="uid://bphqm5sogt68e" path="res://assets/PixelCharacters/Spritesheet/female2.png" id="2_j8o2n"]
+[ext_resource type="Texture2D" uid="uid://c2rcu6ncwxjbf" path="res://assets/PixelCharacters/Spritesheet/female3.png" id="3_yoj0u"]
+[ext_resource type="Texture2D" uid="uid://ca57bly04ivcp" path="res://assets/PixelCharacters/Spritesheet/female4.png" id="4_5edv3"]
+[ext_resource type="Texture2D" uid="uid://cv07gisgcrx2c" path="res://assets/PixelCharacters/Spritesheet/female5.png" id="5_cbwyf"]
+[ext_resource type="Texture2D" uid="uid://cpq217isfi1yj" path="res://assets/PixelCharacters/Spritesheet/female6.png" id="6_hosy5"]
+[ext_resource type="Texture2D" uid="uid://d2hu0em4rp3fo" path="res://assets/PixelCharacters/Spritesheet/knight1.png" id="7_16c58"]
+[ext_resource type="Texture2D" uid="uid://dx0rsjul83pnq" path="res://assets/PixelCharacters/Spritesheet/knight2.png" id="8_5yrji"]
+[ext_resource type="Texture2D" uid="uid://ccip7grom0ero" path="res://assets/PixelCharacters/Spritesheet/male1.png" id="9_5evma"]
+[ext_resource type="Texture2D" uid="uid://dsmiblomp613o" path="res://assets/PixelCharacters/Spritesheet/male2.png" id="10_jk4fv"]
+[ext_resource type="Texture2D" uid="uid://cpsrsegidydcf" path="res://assets/PixelCharacters/Spritesheet/male3.png" id="11_mxtge"]
+[ext_resource type="Texture2D" uid="uid://coex41ixnyqoc" path="res://assets/PixelCharacters/Spritesheet/male4.png" id="12_2ejym"]
+[ext_resource type="Texture2D" uid="uid://cmg4sts2hkgpf" path="res://assets/PixelCharacters/Spritesheet/male5.png" id="13_jp4u2"]
+[ext_resource type="Texture2D" uid="uid://cf63yh5xipc45" path="res://assets/PixelCharacters/Spritesheet/male6.png" id="14_k3b4n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxsbc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m5om8")
+}],
+"loop": true,
+"name": &"female1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j8o2n")
+}],
+"loop": true,
+"name": &"female2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yoj0u")
+}],
+"loop": true,
+"name": &"female3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5edv3")
+}],
+"loop": true,
+"name": &"female4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cbwyf")
+}],
+"loop": true,
+"name": &"female5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hosy5")
+}],
+"loop": true,
+"name": &"female6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_16c58")
+}],
+"loop": true,
+"name": &"knight1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5yrji")
+}],
+"loop": true,
+"name": &"knight2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5evma")
+}],
+"loop": true,
+"name": &"male1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jk4fv")
+}],
+"loop": true,
+"name": &"male2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_mxtge")
+}],
+"loop": true,
+"name": &"male3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_2ejym")
+}],
+"loop": true,
+"name": &"male4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_jp4u2")
+}],
+"loop": true,
+"name": &"male5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_k3b4n")
+}],
+"loop": true,
+"name": &"male6",
+"speed": 5.0
+}]
+
+[node name="Entity" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pxsbc")
+animation = &"female1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

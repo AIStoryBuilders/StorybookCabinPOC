@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://b5ylibnpus5ap"]
+
+[ext_resource type="Texture2D" uid="uid://dtu8fhy71737s" path="res://assets/UI/CharacterInfoSheetv2.png" id="1_0ttcl"]
+[ext_resource type="Script" path="res://Scripts/character_info.gd" id="1_e30t2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p21ci"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_morme"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qphvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_py7dg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ifxp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdy3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_krfw0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_akpwr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5lbix"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ac467"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ru70w"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_e30t2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -330.0
+offset_right = 234.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+texture = ExtResource("1_0ttcl")
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 285.0
+offset_right = 277.0
+offset_bottom = 326.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p21ci")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_morme")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qphvn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_py7dg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7ifxp")
+
+[node name="LineEdit1" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 69.0
+offset_right = 323.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pdy3y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_krfw0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_akpwr")
+caret_blink = true
+
+[node name="LineEdit2" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 114.0
+offset_right = 138.063
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pdy3y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_krfw0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_akpwr")
+caret_blink = true
+
+[node name="LineEdit3" type="LineEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 162.0
+offset_right = 276.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pdy3y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_krfw0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_akpwr")
+caret_blink = true
+
+[node name="LineEdit4" type="TextEdit" parent="TextureRect"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 209.0
+offset_right = 462.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5lbix")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ac467")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ru70w")
+caret_blink = true
+
+[connection signal="get_age" from="." to="." method="_on_get_age"]
+[connection signal="get_description" from="." to="." method="_on_get_description"]
+[connection signal="get_gender" from="." to="." method="_on_get_gender"]
+[connection signal="get_name" from="." to="." method="_on_get_name"]
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

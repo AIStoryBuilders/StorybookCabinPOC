@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxtb8o82g8nuy"]
+
+[ext_resource type="PackedScene" uid="uid://b37udavnj0ai1" path="res://Items/item_texture.tscn" id="1_yxgxp"]
+[ext_resource type="Texture2D" uid="uid://cmg4sts2hkgpf" path="res://assets/PixelCharacters/Spritesheet/male5.png" id="2_k06m7"]
+[ext_resource type="PackedScene" uid="uid://da2a4prwqhbbg" path="res://Entity/male_5.tscn" id="3_dsv77"]
+
+[node name="item_male5" instance=ExtResource("1_yxgxp")]
+texture = ExtResource("2_k06m7")
+this_scene = ExtResource("3_dsv77")

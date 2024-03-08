@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://bana3553etyku"]
+
+[ext_resource type="PackedScene" uid="uid://7asd8lqs7ccq" path="res://Items/item_male_1.tscn" id="1_ojlac"]
+[ext_resource type="PackedScene" uid="uid://ccrqv2ybjqlur" path="res://Items/item_female_1.tscn" id="1_sa4aa"]
+[ext_resource type="PackedScene" uid="uid://cr3thyk25hr4m" path="res://Items/item_male_2.tscn" id="2_iewsq"]
+[ext_resource type="PackedScene" uid="uid://c37e1g63ifcdf" path="res://Items/item_female_2.tscn" id="4_w0i3v"]
+[ext_resource type="PackedScene" uid="uid://covhwranx64yy" path="res://Items/item_male_3.tscn" id="5_y0d2n"]
+[ext_resource type="PackedScene" uid="uid://bf8q7wnflp7pd" path="res://Items/item_female_3.tscn" id="6_78d5k"]
+[ext_resource type="PackedScene" uid="uid://tbquj2lejxbj" path="res://Items/item_male_4.tscn" id="7_suoqi"]
+[ext_resource type="PackedScene" uid="uid://c5lj772y6433c" path="res://Items/item_female_4.tscn" id="8_uuoxn"]
+[ext_resource type="PackedScene" uid="uid://bxtb8o82g8nuy" path="res://Items/item_male_5.tscn" id="9_da4qe"]
+[ext_resource type="PackedScene" uid="uid://n81uq7kjow27" path="res://Items/item_female_5.tscn" id="10_mh0ib"]
+[ext_resource type="PackedScene" uid="uid://cf5bk0m31tkod" path="res://Items/item_male_6.tscn" id="11_4bj87"]
+[ext_resource type="PackedScene" uid="uid://oqwao4q3d7s6" path="res://Items/item_female_6.tscn" id="12_8m2j6"]
+[ext_resource type="PackedScene" uid="uid://b4dik8qu8beqf" path="res://Items/item_knight_1.tscn" id="13_v87eu"]
+[ext_resource type="PackedScene" uid="uid://gspro3n0tcml" path="res://Items/item_knight_2.tscn" id="14_lbx2y"]
+[ext_resource type="Texture2D" uid="uid://cett6oplx1f6l" path="res://assets/UI/CharacterInfoSheet.png" id="15_0htn5"]
+
+[node name="Item_Select" type="CanvasLayer"]
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_left = 3.0
+offset_top = 9.0
+offset_right = 215.0
+offset_bottom = 374.0
+
+[node name="People" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/People"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/People/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/People/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="item_male1" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_ojlac")]
+layout_mode = 2
+
+[node name="item_female1" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_sa4aa")]
+layout_mode = 2
+
+[node name="item_male2" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_iewsq")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/People/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="item_female2" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("4_w0i3v")]
+layout_mode = 2
+
+[node name="item_male3" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("5_y0d2n")]
+layout_mode = 2
+
+[node name="item_female3" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("6_78d5k")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/People/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="item_male4" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("7_suoqi")]
+layout_mode = 2
+
+[node name="item_female4" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("8_uuoxn")]
+layout_mode = 2
+
+[node name="item_male5" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("9_da4qe")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/People/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="item_female5" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("10_mh0ib")]
+layout_mode = 2
+
+[node name="item_male6" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("11_4bj87")]
+layout_mode = 2
+
+[node name="item_female6" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("12_8m2j6")]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="TabContainer/People/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="item_knight1" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer5" instance=ExtResource("13_v87eu")]
+layout_mode = 2
+
+[node name="item_knight2" parent="TabContainer/People/ScrollContainer/VBoxContainer/HBoxContainer5" instance=ExtResource("14_lbx2y")]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -260.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.466667)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 399.0
+offset_top = 388.0
+offset_right = 828.0
+offset_bottom = 648.0
+texture = ExtResource("15_0htn5")
+stretch_mode = 5

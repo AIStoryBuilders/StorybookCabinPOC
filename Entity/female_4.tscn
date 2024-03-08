@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkqf5krblkehp"]
+
+[ext_resource type="PackedScene" uid="uid://c7vrdmerdl6r5" path="res://Entity/entity.tscn" id="1_vc8w4"]
+
+[node name="female4" instance=ExtResource("1_vc8w4")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+animation = &"female4"

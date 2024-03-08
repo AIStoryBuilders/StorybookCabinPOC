@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfnfa720ixkx4"]
+
+[ext_resource type="PackedScene" uid="uid://c7vrdmerdl6r5" path="res://Entity/entity.tscn" id="1_xhguo"]
+
+[node name="male6" instance=ExtResource("1_xhguo")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+animation = &"male6"

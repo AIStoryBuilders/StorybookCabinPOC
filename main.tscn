@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqavhy705vew1"]
+
+[ext_resource type="PackedScene" uid="uid://d16civrvut3pv" path="res://level_base.tscn" id="1_1kgw0"]
+[ext_resource type="Script" path="res://Scripts/Editor_Object.gd" id="1_6n7da"]
+[ext_resource type="PackedScene" uid="uid://bana3553etyku" path="res://Item_Select.tscn" id="2_m3rmf"]
+
+[node name="Main" type="Node"]
+
+[node name="Level" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="LevelBase" parent="Level" instance=ExtResource("1_1kgw0")]
+
+[node name="Editor_Object" type="Node2D" parent="."]
+script = ExtResource("1_6n7da")
+
+[node name="Sprite" type="Sprite2D" parent="Editor_Object"]
+
+[node name="Item_Select" parent="." instance=ExtResource("2_m3rmf")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
