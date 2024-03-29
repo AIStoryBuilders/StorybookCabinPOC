@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwcunt8xir8kn"]
+
+[ext_resource type="Script" path="res://Blazor.gd" id="1_jo5cr"]
+
+[node name="Blazor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jo5cr")
+
+[node name="ParametersLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "All Parameters"
+
+[node name="WebApplicationURLLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 40.0
+offset_bottom = 47.0
+text = "WebApplicationURL:"
+
+[node name="UserNameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 40.0
+offset_bottom = 71.0
+text = "Username"
+
+[node name="HTTPTokenLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 40.0
+offset_bottom = 95.0
+text = "HTTPToken"
+
+[node name="BlazorResponseLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 40.0
+offset_bottom = 167.0
+text = "Blazor Response"
+
+[node name="CallBlazorButton" type="Button" parent="."]
+layout_mode = 0
+offset_top = 104.0
+offset_right = 90.0
+offset_bottom = 135.0
+text = "Call Blazor"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+accept_gzip = false
+
+[connection signal="pressed" from="CallBlazorButton" to="." method="_on_call_blazor_button_pressed"]

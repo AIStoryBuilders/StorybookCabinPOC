@@ -30,5 +30,6 @@ func _process(_delta):
 		
 		#add the character info pop up when release
 		var scene = preload("res://character_info.tscn").instantiate()
-		add_child(scene)
+		var root = get_tree().get_root()
+		root.add_child(scene)
 	pass

@@ -39,4 +39,5 @@ func _on_button_pressed():
 
 func _on_get_prompt(prompt):
 	print(prompt)
+	
 	pass # Replace with function body.
