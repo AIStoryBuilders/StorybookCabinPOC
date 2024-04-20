@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d16civrvut3pv"]
 
-[ext_resource type="Script" path="res://level_base.gd" id="1_kogvq"]
+[ext_resource type="Script" path="res://Scripts/level_base.gd" id="1_kogvq"]
 [ext_resource type="Texture2D" uid="uid://beh4s2clkdfxp" path="res://assets/IndoorTiles/Tilesheets/WallsFloor.png" id="1_l0n6w"]
 [ext_resource type="Texture2D" uid="uid://dvaanwn2ds1x7" path="res://assets/IndoorTiles/Tilesheets/roguelikeIndoor_transparent.png" id="1_ooy5y"]
 

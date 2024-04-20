@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqavhy705vew1"]
+
+[ext_resource type="PackedScene" uid="uid://d16civrvut3pv" path="res://Scenes/level_base.tscn" id="1_q8nlc"]
+[ext_resource type="PackedScene" uid="uid://x317xuxeu3bs" path="res://Scenes/level1.tscn" id="2_r53ge"]
+[ext_resource type="Script" path="res://Scripts/Editor_Object.gd" id="3_dwtq8"]
+[ext_resource type="PackedScene" uid="uid://bana3553etyku" path="res://Scenes/Item_Select.tscn" id="4_67jfm"]
+[ext_resource type="PackedScene" uid="uid://ddba0mf83ndc5" path="res://Scenes/text_pullup.tscn" id="5_oslv7"]
+
+[node name="Main" type="Node"]
+
+[node name="Level" type="Node2D" parent="."]
+position = Vector2(-1, 0)
+
+[node name="LevelBase" parent="Level" instance=ExtResource("1_q8nlc")]
+visible = false
+
+[node name="Level1" parent="Level" instance=ExtResource("2_r53ge")]
+
+[node name="Editor_Object" type="Node2D" parent="."]
+script = ExtResource("3_dwtq8")
+
+[node name="Sprite" type="Sprite2D" parent="Editor_Object"]
+
+[node name="Item_Select" parent="." instance=ExtResource("4_67jfm")]
+
+[node name="Control" parent="Item_Select" instance=ExtResource("5_oslv7")]
+offset_top = -313.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)

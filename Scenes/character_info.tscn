@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://b5ylibnpus5ap"]
 
-[ext_resource type="Texture2D" uid="uid://dtu8fhy71737s" path="res://assets/UI/CharacterInfoSheetv2.png" id="1_0ttcl"]
-[ext_resource type="Script" path="res://Scripts/character_info.gd" id="1_e30t2"]
+[ext_resource type="Script" path="res://Scripts/character_info.gd" id="1_jfuw5"]
+[ext_resource type="Texture2D" uid="uid://dtu8fhy71737s" path="res://assets/UI/CharacterInfoSheetv2.png" id="2_cdaue"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p21ci"]
 
@@ -26,7 +26,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ru70w"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_e30t2")
+script = ExtResource("1_jfuw5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 7
@@ -41,7 +41,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
-texture = ExtResource("1_0ttcl")
+texture = ExtResource("2_cdaue")
 stretch_mode = 4
 
 [node name="Button" type="Button" parent="TextureRect"]
