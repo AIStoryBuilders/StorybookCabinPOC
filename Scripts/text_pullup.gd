@@ -73,12 +73,14 @@ func _on_button_pressed():
 	var http_token = paramHTTPToken
 	var user_text = promptLine.text
 	var http_request = $HTTPRequest
+	var game_board = ""
 	
 	var url = WebApplicationURL + "ReceiveCallFromGodot/"
 	var body_dict = {
 		"userName": user_name,
 		"hTTPToken": http_token,
-		"userText": user_text
+		"userText": user_text,
+		"gameBoard": game_board
 	}
 	
 	var json = JSON.new()
