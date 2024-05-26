@@ -15,7 +15,9 @@ func _ready():
 			Dic[str(Vector2(x, y))] = {
 				"Type": getTileType(Vector2(x, y))
 			}
-	print(Dic)
+
+func get_Dic():
+	return Dic
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

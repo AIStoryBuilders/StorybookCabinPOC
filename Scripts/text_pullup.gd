@@ -7,6 +7,10 @@ signal get_prompt(prompt)
 
 @onready var promptLine = $VBoxContainer/NinePatchRect/LineEdit
 
+var tileMap = preload("res://Scenes/TileMap.gd").new()
+var Dic
+
+
 var _popped_up = false
 var _up_anchor = Vector2(1 - menu_size, 1)
 var _down_anchor = Vector2(1, 1 + menu_size)
@@ -19,8 +23,10 @@ var paramHTTPToken = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	tileMap._ready()
+	Dic = tileMap.get_Dic()
 	#Define the variables
+	var Dic = tileMap.get_Dic()
 	
 	var cmdline_args = OS.get_cmdline_args()
 	#var FirstArguments = "--WebApplicationURL=https://blazorgodot.azurewebsites.net/,--UserName=TestUser,--HTTPToken=1234ABCD#"
@@ -73,7 +79,9 @@ func _on_button_pressed():
 	var http_token = paramHTTPToken
 	var user_text = promptLine.text
 	var http_request = $HTTPRequest
-	var game_board = ""
+	var game_board = Dic
+	
+	print(Dic)
 	
 	var url = WebApplicationURL + "ReceiveCallFromGodot/"
 	var body_dict = {
