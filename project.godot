@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 [autoload]
 
 Signals="*res://Scenes/Signals/signals.gd"
+Global="*res://Scripts/Global.gd"
 
 [display]
 

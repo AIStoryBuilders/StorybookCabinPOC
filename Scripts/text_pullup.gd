@@ -8,8 +8,6 @@ signal get_prompt(prompt)
 @onready var promptLine = $VBoxContainer/NinePatchRect/LineEdit
 
 var tileMap = preload("res://Scenes/TileMap.gd").new()
-var Dic
-
 
 var _popped_up = false
 var _up_anchor = Vector2(1 - menu_size, 1)
@@ -19,15 +17,12 @@ var text_to_display = ""
 var WebApplicationURL = ""
 var paramUserName = ""
 var paramHTTPToken = ""
+var tileMapDic = {}
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tileMap._ready()
-	Dic = tileMap.get_Dic()
-	#Define the variables
-	var Dic = tileMap.get_Dic()
-	
+
 	var cmdline_args = OS.get_cmdline_args()
 	#var FirstArguments = "--WebApplicationURL=https://blazorgodot.azurewebsites.net/,--UserName=TestUser,--HTTPToken=1234ABCD#"
 	var FirstArguments = cmdline_args[0]
@@ -56,7 +51,6 @@ func _ready():
 
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	anchor_top = lerp(anchor_top, _target_anchor.x, lerp_speed)
@@ -73,15 +67,13 @@ func _on_texture_button_pressed():
 	pass # Replace with function body.
 
 
-func _on_button_pressed():	
-	
+func _on_button_pressed():
+
 	var user_name = paramUserName
 	var http_token = paramHTTPToken
 	var user_text = promptLine.text
 	var http_request = $HTTPRequest
-	var game_board = Dic
-	
-	print(Dic)
+	var game_board = Global.GlobalDic
 	
 	var url = WebApplicationURL + "ReceiveCallFromGodot/"
 	var body_dict = {

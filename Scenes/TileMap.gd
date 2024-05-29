@@ -5,19 +5,16 @@ var GridSizeY = 13
 var whatLayer = 0
 var Dic = {}
 
-@onready var tilemap: TileMap = $"."
+@onready var tilemap: TileMap = self
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	for y in range(-6, 6):
 		for x in range(-9, 10):
 			Dic[str(Vector2(x, y))] = {
 				"Type": getTileType(Vector2(x, y))
 			}
-
-func get_Dic():
-	return Dic
+	Global.GlobalDic = Dic
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
