@@ -73,6 +73,7 @@ func _on_button_pressed():
 	var http_token = paramHTTPToken
 	var user_text = promptLine.text
 	var http_request = $HTTPRequest
+	#print(Global.GlobalDic)
 	var game_board = Global.GlobalDic
 	
 	var url = WebApplicationURL + "ReceiveCallFromGodot/"
@@ -84,6 +85,7 @@ func _on_button_pressed():
 	}
 	
 	var json = JSON.new()
+	print(body_dict)
 	var body = json.stringify(body_dict)
 	var headers = ["Content-Type: application/json"]
 	http_request.request_completed.connect(self._on_request_completed)
