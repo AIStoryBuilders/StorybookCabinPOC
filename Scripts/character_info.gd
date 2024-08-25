@@ -4,19 +4,16 @@ signal get_name(name)
 signal get_age(age)
 signal get_gender(gender)
 signal get_description(description)
+signal character_info_confirmed
 
 @onready var nameLine = $TextureRect/LineEdit1
 @onready var ageLine = $TextureRect/LineEdit2
 @onready var genderLine = $TextureRect/LineEdit3
 @onready var descriptionLine = $TextureRect/LineEdit4
 
-"""
-test
-var _name: String
-var _age: int
-var _gender: String
-var _description: String
-"""
+var character_info = {}
+var character_position = Vector2.ZERO
+
 #var textBoxes : Array = [nameLine, ageLine, genderLine, desriptionLine]
 var currentTextBoxIndex = 0
 const NUM_TEXT_BOXES = 4
@@ -39,28 +36,24 @@ func focus_next():
 
 
 func _on_button_pressed():
-	emit_signal("get_name", nameLine.text)
-	emit_signal("get_age", ageLine.text)
-	emit_signal("get_gender", genderLine.text)
-	emit_signal("get_description", descriptionLine.text)
+	character_info["name"] = nameLine.text
+	character_info["age"] = ageLine.text.to_int()
+	character_info["gender"] = genderLine.text
+	character_info["description"] = descriptionLine.text
+	
+	for character_instance in Global.pending_character_data.keys():
+		var position = Global.pending_character_data[character_instance]
+		
+		# Add character info to the global dictionary with the position as the key
+		var position_key = str(position)
+		Global.CharacterDic[position_key] = character_info
+		print("Character added: ", Global.CharacterDic)
+		
+		# Finalize character placement
+		#tilemap.set_character_position(character_instance, position, character_info)
+		print("Position: ", position)
+		
+		# Remove from pending data after processing
+		Global.pending_character_data.erase(character_instance)
+	
 	queue_free()
-
-func _on_get_name(name):
-	print(name)
-
-func _on_get_age(age):
-	print(age)
-
-func _on_get_gender(gender):
-	print(gender)
-
-func _on_get_description(description):
-	print(description)
-
-"""
-func _init(nameLine: String, ageLine: int, genderLine: String, descriptionLine: String):
-	_name = nameLine
-	_age = ageLine
-	_gender = genderLine
-	_description = descriptionLine
-"""

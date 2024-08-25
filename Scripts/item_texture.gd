@@ -20,4 +20,3 @@ func _item_clicked(event):
 			object_cursor.current_item = this_scene
 			cursor_sprite.texture = null
 	pass # Replace with function body.
-

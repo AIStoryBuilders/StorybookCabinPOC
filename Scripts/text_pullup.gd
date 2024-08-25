@@ -18,14 +18,15 @@ var WebApplicationURL = ""
 var paramUserName = ""
 var paramHTTPToken = ""
 var tileMapDic = {}
+var CharDic = {}
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
 	var cmdline_args = OS.get_cmdline_args()
-	#var FirstArguments = "--WebApplicationURL=https://blazorgodot.azurewebsites.net/,--UserName=TestUser,--HTTPToken=1234ABCD#"
-	var FirstArguments = cmdline_args[0]
+	var FirstArguments = "--WebApplicationURL=https://blazorgodot.azurewebsites.net/,--UserName=TestUser,--HTTPToken=1234ABCD#"
+	#var FirstArguments = cmdline_args[0]
 	
 	var FirstArgumentsArray = FirstArguments.split(",")
 	
@@ -75,17 +76,21 @@ func _on_button_pressed():
 	var http_request = $HTTPRequest
 	#print(Global.GlobalDic)
 	var game_board = Global.GlobalDic
+	var character_info = Global.CharacterDic
+	
+	#print("GameBoard", game_board)
 	
 	var url = WebApplicationURL + "ReceiveCallFromGodot/"
 	var body_dict = {
 		"userName": user_name,
 		"hTTPToken": http_token,
 		"userText": user_text,
-		"gameBoard": game_board
+		"gameBoard": game_board,
+		"characterInfo": character_info
 	}
 	
 	var json = JSON.new()
-	print(body_dict)
+	#print(body_dict)
 	var body = json.stringify(body_dict)
 	var headers = ["Content-Type: application/json"]
 	http_request.request_completed.connect(self._on_request_completed)
@@ -93,7 +98,7 @@ func _on_button_pressed():
 	if error != OK:
 		print("Error sending request: ", error)
 		
-	print("User Text: " + user_text)
+	#print("User Text: " + user_text)
 	
 func _on_request_completed(result, response_code, headers, body):
 	var BlazorResponseLabelControl = $VBoxContainer/NinePatchRect/BlazorResponseLabel
@@ -116,6 +121,3 @@ func _on_request_completed(result, response_code, headers, body):
 			print("Unexpected JSON structure")
 
 	pass # Replace with function body.
-
-
-

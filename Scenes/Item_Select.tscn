@@ -23,9 +23,11 @@ offset_left = 3.0
 offset_top = 9.0
 offset_right = 215.0
 offset_bottom = 374.0
+current_tab = 0
 
 [node name="People" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/People"]
 layout_mode = 1
