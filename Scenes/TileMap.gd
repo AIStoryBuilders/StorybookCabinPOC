@@ -11,13 +11,6 @@ var Dic = {}
 var character
 var tile_size = Vector2(16, 16)
 
-var tile_id_to_info = {
-	1: {"rect": Rect2(0, 0, 16, 16), "description": "A sturdy wall."},
-	2: {"rect": Rect2(16, 0, 16, 16), "description": "A mysterious object."},
-	3: {"rect": Rect2(32, 0, 16, 16), "description": "An ancient relic."},
-	# Add more mappings as needed
-}
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for y in range(-6, 6):

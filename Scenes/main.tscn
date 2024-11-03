@@ -503,7 +503,10 @@ script = ExtResource("6_hdlig")
 [node name="Item_Select" parent="." instance=ExtResource("4_67jfm")]
 
 [node name="Control" parent="Item_Select" instance=ExtResource("5_oslv7")]
-offset_top = -313.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)

@@ -6,51 +6,58 @@
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -314.0
+offset_right = -9.0
+offset_bottom = 8.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 script = ExtResource("1_ph0ag")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.439
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 281.0
-offset_bottom = 281.0
+anchor_bottom = 1.427
+offset_top = -287.984
+offset_right = 9.0
+offset_bottom = -288.112
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
-
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
-custom_minimum_size = Vector2(100, 35)
-layout_mode = 2
-size_flags_horizontal = 8
-texture_normal = ExtResource("1_2a1vu")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_q8lyr")
 
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 504.0
+offset_bottom = 424.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NinePatchRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
 [node name="LineEdit" type="TextEdit" parent="VBoxContainer/NinePatchRect"]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 46.0
-offset_right = 1144.0
-offset_bottom = 190.0
+offset_top = 456.0
+offset_right = 512.0
+offset_bottom = 568.0
 caret_blink = true
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/NinePatchRect"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_top = 416.0
+offset_right = 112.0
+offset_bottom = 456.0
 
 [node name="Label" type="Label" parent="VBoxContainer/NinePatchRect/MarginContainer"]
 layout_mode = 2
@@ -63,12 +70,25 @@ offset_top = 190.0
 offset_right = 88.0
 offset_bottom = 230.0
 
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/NinePatchRect"]
+custom_minimum_size = Vector2(100, 35)
+layout_mode = 2
+offset_left = -35.0
+offset_top = 99.0
+offset_right = 65.0
+offset_bottom = 134.0
+rotation = -1.5708
+size_flags_horizontal = 0
+texture_normal = ExtResource("1_2a1vu")
+ignore_texture_size = true
+stretch_mode = 0
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
-offset_left = 528.0
-offset_top = 546.0
-offset_right = 623.0
-offset_bottom = 590.0
+offset_left = 208.0
+offset_top = 584.0
+offset_right = 303.0
+offset_bottom = 628.0
 size_flags_horizontal = 4
 text = "Enter"
 
@@ -76,5 +96,5 @@ text = "Enter"
 accept_gzip = false
 
 [connection signal="get_prompt" from="." to="." method="_on_get_prompt"]
-[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NinePatchRect/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
