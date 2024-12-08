@@ -44,32 +44,17 @@ func _process(_delta):
 				var grid_y = round(global_position.y / tile_size_y) * tile_size_y + tile_size_y / 2
 				new_item.global_position = Vector2(grid_x, grid_y)
 				
-				var tile_position = world_to_tile(new_item.global_position)
+				var tile_position = getCorrds(new_item.global_position)
 				
 				character_info["position"] = tile_position
 				
 				scene.connect("character_info_confirmed", Callable(self, "_on_character_info_confirmed"))
 				
-				Global.pending_character_data[new_item] = world_to_tile(new_item.global_position)
+				Global.pending_character_data[new_item] = tile_position
 		
 			# Reset current item
 			new_item = null
 			current_item = null
-		
-func world_to_tile(world_position: Vector2) -> Vector2:
-	return (world_position - tilemap.global_position) / tile_size
 	
-
-func finalize_placement(position: Vector2):
-	if character_info.has("name"):
-		# Save character info along with position
-		var character_data = {
-			"name": character_info["name"],
-			"age": character_info["age"],
-			"gender": character_info["gender"],
-			"description": character_info["description"],
-			"position": position
-		}
-		Global.GlobalDic["characters"].append(character_data)
-		#print(character_data)
-		
+func getCorrds(world_position: Vector2) -> Vector2:
+	return (world_position)

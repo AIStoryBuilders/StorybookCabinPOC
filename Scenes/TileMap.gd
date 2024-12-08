@@ -18,7 +18,9 @@ func _ready():
 			var position = Vector2(x, y)
 			var tile_info = getTileType(position)
 			
-			Dic[str(position)] = {
+			var tile_global_postion = tilemap.map_to_local(position)
+			
+			Dic[str(tile_global_postion)] = {
 				"Type": tile_info["type"],
 				"description": tile_info["description"]
 			}
@@ -82,28 +84,3 @@ func getObjectDescription(position: Vector2) -> String:
 func tile_to_world(tile_position: Vector2) -> Vector2:
 	return tile_position * tile_size + tile_size / 2
 	
-func set_character_position(character_instance, tile_position: Vector2, character_info: Dictionary):
-	if is_tile_empty(tile_position):
-		var world_position = tile_to_world(tile_position)
-		
-		Global.character_position = character_instance.global_position
-		#print(Global.character_position)
-		
-		if character_instance.get_parent() == null:
-			level.add_child(character_instance)
-		
-		character = character_instance
-		
-		var position_key = str(tile_position)
-		Global.CharacterDic[position_key] = {
-			"name": character_info.get("name", "Unknown"),
-			"age": character_info.get("age", 0),
-			"gender": character_info.get("gender", "unknown"),
-			"description": character_info.get("description", "No description")
-		}
-		
-		print(Global.CharacterDic) 
-		print('TdsjidjwhaD') # Print updated JSON
-
-		return true
-	return false

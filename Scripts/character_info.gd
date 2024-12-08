@@ -49,9 +49,10 @@ func _on_button_pressed():
 		Global.CharacterDic[position_key] = character_info
 		print("Character added: ", Global.CharacterDic)
 		
-		# Finalize character placement
-		#tilemap.set_character_position(character_instance, position, character_info)
 		print("Position: ", position)
+		
+		# Set the name of the character instance
+		character_instance.name = character_info["name"]
 		
 		# Remove from pending data after processing
 		Global.pending_character_data.erase(character_instance)

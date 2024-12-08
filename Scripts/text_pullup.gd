@@ -7,6 +7,7 @@ signal get_prompt(prompt)
 
 @onready var promptLine = $VBoxContainer/NinePatchRect/LineEdit
 @onready var message_container = $VBoxContainer/NinePatchRect/ScrollContainer/VBoxContainer
+@onready var level = get_node("/root/Main/Level")
 
 var tileMap = preload("res://Scenes/TileMap.gd").new()
 
@@ -93,19 +94,40 @@ func _on_request_completed(result, response_code, headers, body):
 
 	if response_code == 200:
 		var body_string = body.get_string_from_utf8()
+		#var body_string := """
+	#{
+		#"(-100, 1)": {
+			#"age": 0,
+			#"description": "",
+			#"name": "Alan",
+			#"gender": ""
+		#}
+	#}
+	#"""
+		#print("Raw response body: ", body_string)
 		print("Raw response body: ", body_string)
-		
 		var json = JSON.new()
-		var parsed_data = JSON.parse_string(body_string)
-		
-		if typeof(parsed_data) == TYPE_DICTIONARY and "message" in parsed_data:
-			var message = parsed_data["message"]
-			print("Message: ", message)            
+		var parsed_data  = JSON.parse_string(body_string)
+		var coordKey = parsed_data.keys()[0]
 			
-			# Display the AI's response in the chat area
-			add_message(message, false)
+		if parsed_data != null:
+			add_message(body_string, false)
 		else:
 			print("Unexpected JSON structure")
+		
+		var characterData = parsed_data[coordKey]
+		var chrName = characterData.get("name", "")
+		var found_character = level.get_node(chrName)
+		
+		if found_character:
+			var coords = coordKey.trim_prefix("(").trim_suffix(")")
+			var coordinates = coords.split(", ")
+			var coordX = coordinates[0].to_float() 
+			var coordY = coordinates[1].to_float() 
+			found_character.global_position = Vector2(coordX, coordY) 
+			print("Moved character Alan to new position")
+		else:
+			print("Character Alan not found")
 
 func add_message(text: String, is_user: bool):
 	var message_label = Label.new()
